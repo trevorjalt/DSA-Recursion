@@ -223,16 +223,21 @@ const organization = {
 			}
 }}};
 
+// Alternative Solution
+// function traverseA(data, depth = 0) {
+// 	let indent = " ".repeat(depth * 4);
+// 	Object.keys(data).forEach(key => {
+// 		console.log(indent + key);
+// 		traverseA(data[key], depth + 1)
+// 	});
+// }
+
 
 function organizationChart(chart, indent=0) {
 	for (let key in chart) {
-    if (!key) {
-      return
-    } else {
 		console.log(" ".repeat(indent), key);
 		organizationChart(chart[key], indent + 4);
     }
-	}
 }
 
 organizationChart(organization);
@@ -251,5 +256,3 @@ function binaryRepresentation(num, binary=''){
 }
 
 console.log(binaryRepresentation(25))
-
-
